@@ -26,9 +26,9 @@ class ServicesCommands(Commands):
     def __init__(self, cli_config, docker_helper=None):
         """Constructor."""
         super().__init__(cli_config)
-        self.docker_helper = docker_helper or DockerHelper(
-            cli_config.get_project_shortname(), local=True
-        )
+        # self.docker_helper = docker_helper or DockerHelper(
+        #     cli_config.get_project_shortname(), local=True
+        # )
 
     def ensure_containers_running(self):
         """Ensures containers are running."""
