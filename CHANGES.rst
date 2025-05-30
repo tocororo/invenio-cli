@@ -1,12 +1,37 @@
 ..
     Copyright (C) 2019-2024 CERN.
     Copyright (C) 2019-2021 Northwestern University.
+    Copyright (C) 2025      TU Wien.
 
     Invenio-Cli is free software; you can redistribute it and/or modify
     it under the terms of the MIT License; see LICENSE file for more details.
 
 Changes
 =======
+
+Version 1.7.2 (released 2025-04-22)
+
+- setup: bump minimum version of `pipenv` to pull in the `packaging` dependency
+
+Version 1.7.1 (released 2025-03-31)
+
+- versions: fix accidental creation of a tuple from the version string
+
+Version 1.7.0 (released 2025-03-28)
+
+- build: allow use of either `npm` or `pnpm` as JS package manager (via `.invenio`)
+
+Version 1.6.1 (released 2025-03-27)
+
+- versions: consider `pyproject.toml` when checking `App-{RDM,ILS}` dependency versions
+
+Version 1.6.0 (released 2025-02-28)
+
+- packages: allow use of either `pipenv` or `uv` as python package manager
+- flask: replace `FLASK_ENV` with `FLASK_DEBUG`
+- celery: allow setting a log level
+- config: make host & port for both web and search configurable via `.invenio.private`
+- run: introduce more fine-granular "web" and "worker" sub-commands
 
 Version 1.5.0 (released 2024-08-01)
 

@@ -16,15 +16,13 @@ import pytest
 from invenio_cli.commands import ContainersCommands
 
 
-@pytest.mark.skip()
 @pytest.fixture(scope="function")
 def expected_setup_calls():
     return [
         call("project-shortname", "invenio db init create"),
         call(
             "project-shortname",
-            "invenio files location create --default default-location "
-            "${INVENIO_INSTANCE_PATH}/data",
+            "invenio files location create --default default-location ${INVENIO_INSTANCE_PATH}/data",  # noqa
         ),
         call("project-shortname", "invenio roles create admin"),
         call("project-shortname", "invenio access allow superuser-access role admin"),
@@ -37,14 +35,12 @@ def expected_setup_calls():
     ]
 
 
-@pytest.mark.skip()
 @pytest.fixture(scope="function")
 def expected_force_calls():
     return [
         call(
             "project-shortname",
-            "invenio shell --no-term-title -c "
-            "\"import redis; redis.StrictRedis.from_url(app.config['CACHE_REDIS_URL']).flushall(); print('Cache cleared')\"",  # noqa
+            "invenio shell --no-term-title -c \"import redis; redis.StrictRedis.from_url(app.config['CACHE_REDIS_URL']).flushall(); print('Cache cleared')\"",  # noqa
         ),
         call("project-shortname", "invenio db destroy --yes-i-know"),
         call("project-shortname", "invenio index destroy --force --yes-i-know"),
