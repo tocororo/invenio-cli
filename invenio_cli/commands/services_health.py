@@ -42,8 +42,7 @@ class ServicesHealthCommands(object):
 
         return run_cmd(
             [
-                "docker",
-                "compose",
+                "podman-compose",
                 "--file",
                 filepath,
                 "exec",
@@ -63,8 +62,7 @@ class ServicesHealthCommands(object):
 
         return run_cmd(
             [
-                "docker",
-                "compose",
+                "podman-compose",
                 "--file",
                 filepath,
                 "exec",
@@ -83,8 +81,7 @@ class ServicesHealthCommands(object):
 
         return run_cmd(
             [
-                "docker",
-                "compose",
+                "podman-compose",
                 "--file",
                 filepath,
                 "exec",

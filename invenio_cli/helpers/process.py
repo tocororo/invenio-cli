@@ -32,6 +32,7 @@ class ProcessResponse:
 
 def run_cmd(command):
     """Runs a given command and returns a ProcessResponse."""
+    print(f"exec: {command}")
     p = popen(command, stdout=PIPE, stderr=PIPE)
     output, error = p.communicate()
     output = output.decode("utf-8")

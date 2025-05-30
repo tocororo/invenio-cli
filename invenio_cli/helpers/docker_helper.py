@@ -13,7 +13,7 @@
 
 import re
 
-import docker
+import podman as docker
 
 from .process import ProcessResponse, run_cmd, run_interactive
 
@@ -26,7 +26,7 @@ class DockerHelper(object):
     def __init__(self, project_shortname, local=True, log_config=None):
         """Constructor."""
         super().__init__()
-        self.docker_compose = ["docker", "compose"]
+        self.docker_compose = ["podman-compose"]
         self.container_prefix = self._normalize_name(project_shortname)
         self.local = local
         self.docker_client = docker.from_env()
